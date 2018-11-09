@@ -518,7 +518,7 @@ class Library {
    * @param reqValue = ""
    * @param contentAsRegex if true, the content of @param content is considered to be regex
    * @return boolean
-   * @deprecated, use {@link VerifyURLBuilder}
+   * @deprecated use {@link VerifyURLBuilder}
    * TODO: Refactor usages to use VerifyURLBuilder.
    */
   static boolean verifyUrl(URL url, int code = 200, String content = "", long timeout = 30000, boolean allowRedirects = true,
