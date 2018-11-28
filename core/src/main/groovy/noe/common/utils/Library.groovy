@@ -469,7 +469,13 @@ class Library {
    *
    */
   static String getRootPath() {
-    def rootPath = Library.getUniversalProperty("project.root.path", '..')
+    String defValue
+    if(Java.isJdk1xOrHigher('9')) {
+      defValue = '.'
+    } else {
+      defValue = '..'
+    }
+    def rootPath = Library.getUniversalProperty("project.root.path", defValue)
     return new File(rootPath).getCanonicalPath()
   }
 
